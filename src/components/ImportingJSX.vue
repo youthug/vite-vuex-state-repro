@@ -1,11 +1,12 @@
-<script lang="jsx">
+<script>
 import {mapGetters} from "vuex";
 import {hasRole} from "../utils/permission.js";
+import './renderJSX.jsx'
 
 export default {
   mounted() {
     // change 1 -> 2 or anything to trigger HMR
-    console.log('JSX mounted', 1)
+    console.log('ImportingJSX mounted', 1)
   },
   computed: {
     ...mapGetters(['roles'])
@@ -18,15 +19,15 @@ export default {
 
 <template>
   <div class="box-container">
-    <h2>&lt;script lang="jsx"></h2>
+    <h2>&lt;script> + importing .jsx file</h2>
     <div>
       roles: {{ roles }}
     </div>
     <p style="color: red;">
-      <strong>Editing any script in JSX.vue will change the result to `false`.</strong>
+      <strong>Editing any script in renderJSX.jsx will change the result to `false`.</strong>
     </p>
     <div>
-      hasRole(['admin']) --- <span>{{ hasRole(['admin'], 'JSX') }}</span>
+      hasRole(['admin']) --- <span>{{ hasRole(['admin'], 'ImportingJSX') }}</span>
     </div>
   </div>
 </template>

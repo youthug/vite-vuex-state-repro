@@ -4,7 +4,7 @@ import {hasRole} from "../utils/permission.js";
 
 export default {
   mounted() {
-    // change 1 -> 2 or anything to trigger hmr
+    // change 1 -> 2 or anything to trigger HMR
     console.log('NotJSX mounted', 1)
   },
   computed: {

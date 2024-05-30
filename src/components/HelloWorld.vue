@@ -3,17 +3,19 @@ import {mapGetters} from "vuex";
 import {hasRole} from "../utils/permission.js";
 import NotJSX from "./NotJSX.vue";
 import JSX from "./JSX.vue";
+import ImportingJSX from "./ImportingJSX.vue";
 
 export default {
   components: {
     NotJSX,
     JSX,
+    ImportingJSX,
   },
   computed: {
     ...mapGetters(['roles'])
   },
   mounted() {
-    // change 1 -> 2 or anything to trigger hmr
+    // change 1 -> 2 or anything to trigger HMR
     console.log('HelloWorld mounted', 1)
   },
   methods: {
@@ -37,6 +39,7 @@ export default {
     <div style="border-top: 1px solid #ccc; padding: 20px 10px; display: flex; gap: 20px;">
       <NotJSX />
       <JSX />
+      <ImportingJSX />
     </div>
   </div>
 </template>
