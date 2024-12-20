@@ -9,7 +9,10 @@ export default {
     console.log('ImportingJSX mounted', 1)
   },
   computed: {
-    ...mapGetters(['roles'])
+    ...mapGetters(['roles']),
+    rolesComputed() {
+        return store.getters['roles']
+    },
   },
   methods: {
     hasRole,
@@ -22,6 +25,9 @@ export default {
     <h2>&lt;script> + importing .jsx file</h2>
     <div>
       roles: {{ roles }}
+    </div>
+    <div>
+      roles in computed: {{ rolesComputed }}
     </div>
     <p style="color: red;">
       <strong>Editing any script in renderJSX.jsx will change the result to `false`.</strong>
